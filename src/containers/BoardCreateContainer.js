@@ -1,12 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import BoardCreate from '../components/BoardCreate';
+import { addBoard } from '../actions';
 
 class BoardContainer extends React.Component {
   render() {
-    const { boards } = this.props;
+    const { addBoard } = this.props;
     return (
       <div>
-        Create Board
+        <BoardCreate addBoard={addBoard} />
       </div>
     )
   }
@@ -17,7 +19,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  addBoard: title => {
+    dispatch(addBoard(title));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardContainer);
