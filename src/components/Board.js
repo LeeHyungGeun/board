@@ -4,15 +4,15 @@ import './board.scss';
 
 class Board extends React.Component {
   render() {
-    const { list } = this.props;
+    const { boards } = this.props;
     return (
       <div className="board-wrap">
         <div className="board">
           <ul className="board-list">
             {
-              list.map((item, key) => {
+              boards.map((item, key) => {
                 return (
-                  <li className="board-list-item">{item.title}</li>
+                  <li key={key} className="board-list-item">{item.title}</li>
                 )
               })
             }
@@ -24,11 +24,11 @@ class Board extends React.Component {
 }
 
 Board.propTypes = {
-  list: PropTypes.array,
+  boards: PropTypes.array,
 }
 
 Board.defaultProps = {
-  list: [
+  boards: [
     {
       title: 'TItle 1'
     },
