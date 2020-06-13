@@ -1,12 +1,11 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import './App.css';
+import BoardContainer from './containers/BoardContainer';
 
 function App() {
   return (
     <div>
+      <BoardContainer />
     </div>
   );
 }
